@@ -1,3 +1,5 @@
+Build est un projet Symfony utilisant la base de donnée de PhoenixEmulator.
+
 Symfony Standard Edition
 ========================
 
