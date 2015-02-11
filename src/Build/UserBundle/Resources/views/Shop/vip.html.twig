@@ -1,0 +1,16 @@
+{% extends 'BuildUserBundle:Security:account.html.twig' %}
+{% block title %}{{ parent() }} Compte{% endblock %}
+  
+{% block boutique %}
+	<a href="/account/shop/bibz"><div class="button_min green">Bib'z</div></a>
+	<div class="button_min green select">VIP Club</div>
+{% endblock %}
+
+{% block content %}
+	{%if message is defined %}
+		{{message}}<br><br>
+	{%endif%}
+	Tu a {{user.jetons}} Bib'z<br>
+	le VIP Club coute 10 Bib'z
+	<a href="/account/shop/vip_check">Adhérer</a>
+{% endblock %}

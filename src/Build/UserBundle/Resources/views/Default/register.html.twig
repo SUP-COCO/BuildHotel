@@ -1,0 +1,36 @@
+{% extends '::frontpage.html.twig' %}
+
+{% block title %}
+{{ parent() }} Inscription
+{% endblock %}
+
+{% block body %}
+	<div id="login">
+		<div id="logo"></div>
+		<br><br><br>
+		{{ form_start(form) }}
+		{{ form_errors(form.username) }}
+		{{ form_errors(form.password) }}
+		{{ form_errors(form.gender) }}
+		{{ form_errors(form.mail) }}
+
+		{{ form_label(form.username) }}
+		{{ form_widget(form.username) }}
+
+		{{ form_widget(form.password) }}
+
+		{{ form_label(form.gender) }}
+		{{ form_widget(form.gender) }}
+		<br>
+		{{ form_label(form.mail) }}
+		{{ form_widget(form.mail) }}
+		<br>
+
+		{{ form_label(form.Enregistrer) }}
+		{{ form_widget(form.Enregistrer) }}
+		{{ form_end(form) }}
+		<a href="../login">Se connecter!</a>
+	</div>
+	<div class="promo-hotel"></div>
+{% endblock %}
+

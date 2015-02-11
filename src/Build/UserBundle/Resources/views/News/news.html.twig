@@ -1,0 +1,16 @@
+ {# {% extends '::template.html.twig' %} #}
+{% extends 'BuildUserBundle:Security:account.html.twig' %}
+{% block title %}{{ parent() }} Compte{% endblock %}
+  
+{% block communaute %}
+	<div class="button yellow select">Communauté</div>
+{% endblock %}
+
+{% block content %}
+	<div id="content">
+		<div id="title">{{article.title}}</div>
+		<hr>
+		{{article.content}}<br><br>
+		<small>Posté le {{article.Date.date|date('d M Y')}} par {{author.username}}</small>
+	</div>
+{% endblock %}

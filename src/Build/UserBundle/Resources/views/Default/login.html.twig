@@ -1,0 +1,16 @@
+{% extends '::frontpage.html.twig' %}
+
+{% block title %}
+{{ parent() }} Connexion
+{% endblock %}
+
+{% block body %}
+	{{ error_message }}
+<form action="{{ path('login_check') }}" method="POST">
+	<img src="{{ asset('bundles/builduser/images/build_logo.png') }}">
+	<input type="text" name="username" id="username">
+	<input type="password" name="password" id="password">
+	<input type="submit" value="Connexion" name="submit">
+</form>
+	<a href="../signup"><button>Inscription</button></a>
+{% endblock %}
