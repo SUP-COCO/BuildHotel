@@ -1,0 +1,35 @@
+ {# {% extends '::template.html.twig' %} #}
+{% extends 'BuildUserBundle:Security:account.html.twig' %}
+{% block title %}{{ parent() }} Compte{% endblock %}
+  
+{% block communaute %}
+	<div class="button yellow select">Communauté</div>
+{% endblock %}
+
+{% block content %}
+	<div id="content">
+		<div id="title">Actu</div>
+		<hr>
+		 
+		<div id="banner-slide">
+			<ul class="bjqs">
+			 	{% for article in news %}
+			 		<li><a href="/community/news/{{article.id}}"><img src="{{ article.img }}" title="{{article.title}}"></a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+        jQuery(document).ready(function($) {
+          
+          $('#banner-slide').bjqs({
+            animtype      : 'slide',
+            height        : 300,
+            width         : 759,
+            responsive    : true,
+            randomstart   : true
+          });
+          
+        });
+      </script>
+{% endblock %}

@@ -1,0 +1,83 @@
+build_user:
+    resource: "@BuildUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+# build_build:
+#     resource: "@BuildUserBundle/Controller/"
+#     type:     annotation
+#     prefix:   /
+
+# app:
+#     resource: @AppBundle/Controller/
+#     type:     annotation
+
+index:
+    pattern: /
+    defaults: { _controller: BuildUserBundle:Security:login }
+
+register:
+    pattern: /signup/
+    defaults: { _controller: BuildUserBundle:Default:Register }
+
+register_ok:
+    pattern: /signup/
+    defaults: { _controller: BuildUserBundle:Default:Register }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: BuildUserBundle:Security:login }
+account:
+    pattern:   /account
+    defaults:  { _controller: BuildUserBundle:Security:account }
+login_check:
+    pattern:   /login_check
+
+hotel:
+    pattern:   /hotel
+    defaults:  { _controller: BuildUserBundle:Security:hotel }
+
+news:
+    pattern:   /community/news
+    defaults:  { _controller: BuildUserBundle:News:index }
+
+news_id:
+    pattern:   /community/news/{param}
+    defaults:  { _controller: BuildUserBundle:News:news }
+
+admin:
+    pattern:   /admin
+    defaults:  { _controller: BuildUserBundle:Admin:admin }
+admin_users:
+    pattern:   /admin/users
+    defaults:  { _controller: BuildUserBundle:Admin:users }
+admin_users_edit:
+    pattern:   /admin/users/{param}
+    defaults:  { _controller: BuildUserBundle:Admin:editUser }
+
+account_edit:
+    pattern:    /account/edit
+    defaults:   { _controller: BuildUserBundle:Security:edit }
+
+create_news:
+    pattern:    /admin/news/create
+    defaults:   { _controller: BuildUserBundle:Admin:createNews }
+
+shop_bibz:
+    pattern:    /account/shop/bibz
+    defaults:   { _controller: BuildUserBundle:Shop:bibz }
+
+shop_bibz_valid:
+    pattern:    /account/shop/bibz_valid
+    defaults:   { _controller: BuildUserBundle:Shop:valid }
+
+shop_vip:
+    pattern:    /account/shop/vip
+    defaults:   { _controller: BuildUserBundle:Shop:vip }
+
+vip_check:
+    pattern:    /account/shop/vip_check
+    defaults:   { _controller: BuildUserBundle:Shop:vipcheck }
+# admin_users_edit_check:
+#     pattern:   /admin/users_check
+#     defaults:  { _controller: BuildUserBundle:Admin:editUserMod }
